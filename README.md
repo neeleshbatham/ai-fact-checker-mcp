@@ -9,7 +9,7 @@ The system extracts claims from input text, retrieves evidence through the MCP l
 - **Developer**: Neelesh Batham (241562502)
 - **Program**: eMasters AI/ML '24
 - **Course**: EE964 - Project
-- **Timeline**: April 28, 2025 - June 15, 2025 (6 weeks)
+- **Timeline**: April 28, 2025 - June 15, 2025 (8 weeks)
 
 ## System Architecture
 

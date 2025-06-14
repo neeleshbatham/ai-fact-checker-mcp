@@ -1,0 +1,44 @@
+.loading {
+    display: none;
+}
+
+.loading.active {
+    display: block;
+}
+
+.verdict-supported {
+    color: #059669;
+    background-color: #ecfdf5;
+}
+
+.verdict-refuted {
+    color: #dc2626;
+    background-color: #fef2f2;
+}
+
+.verdict-uncertain {
+    color: #d97706;
+    background-color: #fffbeb;
+}
+
+.verdict-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.verdict-badge.supported {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.verdict-badge.refuted {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.verdict-badge.uncertain {
+    background-color: #fef3c7;
+    color: #92400e;
+} 

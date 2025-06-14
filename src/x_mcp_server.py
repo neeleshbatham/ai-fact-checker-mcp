@@ -1,5 +1,6 @@
 from mcp.server.fastmcp import FastMCP
 import requests
+from loguru import logger
 
 mcp = FastMCP("X MCP Server")
 
@@ -13,6 +14,8 @@ def search_x(query: str) -> list[str]:
     headers = {"Authorization": f"Bearer {X_BEARER_TOKEN}"}
     params = {"query": query, "max_results": 5}
     resp = requests.get("https://api.twitter.com/2/tweets/search/recent", headers=headers, params=params)
+    logger.info("======================X MCP Server======================")
+    logger.info(resp.json())
     if resp.status_code == 200:
         data = resp.json()
         tweets = []
@@ -23,4 +26,4 @@ def search_x(query: str) -> list[str]:
     else:
         return [f"X API error: {resp.status_code}"]
 
-# Again, no .serve() and no __main__ block!
+app = mcp.streamable_http_app()

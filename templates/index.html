@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Fact Checker</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/static/styles.css" rel="stylesheet">
+    <style>
+        .sidebar {
+            width: 300px;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background: white;
+            border-right: 1px solid #e5e7eb;
+            padding: 1rem;
+            transition: transform 0.3s ease;
+            z-index: 40;
+        }
+        .sidebar.collapsed {
+            transform: translateX(-300px);
+        }
+        .toggle-btn {
+            position: fixed;
+            left: 300px;
+            top: 20px;
+            z-index: 50;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 9999px;
+            padding: 0.5rem;
+            cursor: pointer;
+            transition: left 0.3s ease;
+        }
+        .toggle-btn.collapsed {
+            left: 0;
+            transform: rotate(180deg);
+        }
+        .main-content {
+            margin-left: 300px;
+            transition: margin-left 0.3s ease;
+        }
+        .main-content.expanded {
+            margin-left: 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Left Panel -->
+    <div id="sidebar" class="sidebar">
+        <h2 class="text-xl font-semibold mb-4 text-gray-800">History</h2>
+        <div id="history" class="space-y-4">
+            <!-- History items will be populated here -->
+        </div>
+    </div>
+
+    <!-- Toggle Button -->
+    <button id="toggleSidebar" class="toggle-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg>
+    </button>
+
+    <!-- Main Content -->
+    <div id="mainContent" class="main-content p-8">
+        <h1 class="text-4xl font-bold text-center mb-8 text-gray-800">AI Fact Checker</h1>
+        
+        <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-6">
+            <div class="mb-6">
+                <label for="text" class="block text-sm font-medium text-gray-700 mb-2">Enter text to fact check:</label>
+                <textarea 
+                    id="text" 
+                    rows="4" 
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                    placeholder="Enter text containing claims to verify..."></textarea>
+            </div>
+            
+            <button 
+                id="check" 
+                class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200">
+                Check Facts
+            </button>
+
+            <div class="loading mt-4 text-center hidden">
+                <div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-blue-600 border-t-transparent"></div>
+                <p class="mt-2 text-gray-600">Checking facts...</p>
+            </div>
+        </div>
+
+        <div id="results" class="max-w-2xl mx-auto mt-8 space-y-6"></div>
+    </div>
+
+    <script>
+        // Sidebar toggle functionality
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('mainContent');
+        const toggleBtn = document.getElementById('toggleSidebar');
+        
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+            mainContent.classList.toggle('expanded');
+            toggleBtn.classList.toggle('collapsed');
+        });
+
+        // Function to load history
+        async function loadHistory() {
+            try {
+                const response = await fetch('/history');
+                const data = await response.json();
+                const historyContainer = document.getElementById('history');
+                
+                historyContainer.innerHTML = data.history.map(item => `
+                    <div class="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100" onclick="loadHistoryItem('${item.id}')">
+                        <p class="text-sm text-gray-600 truncate">${item.text.substring(0, 100)}...</p>
+                        <p class="text-xs text-gray-500 mt-1">${new Date(item.timestamp).toLocaleString()}</p>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error loading history:', error);
+            }
+        }
+
+        // Function to load a specific history item
+        async function loadHistoryItem(id) {
+            try {
+                const response = await fetch(`/history/${id}`);
+                const data = await response.json();
+                document.getElementById('text').value = data.text;
+                displayResults(data.results);
+            } catch (error) {
+                console.error('Error loading history item:', error);
+            }
+        }
+
+        // Function to display results
+        function displayResults(results) {
+            const resultsContainer = document.getElementById('results');
+            resultsContainer.innerHTML = '';
+
+            if (results.length === 0) {
+                resultsContainer.innerHTML = `
+                    <div class="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded relative" role="alert">
+                        <span class="block sm:inline">No claims found in the text.</span>
+                    </div>`;
+                return;
+            }
+
+            results.forEach(result => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-lg shadow-md p-6 transform transition-all duration-200 hover:shadow-lg';
+                
+                const verdictClass = result.verdict.toLowerCase();
+                
+                card.innerHTML = `
+                    <div class="flex justify-between items-start mb-4">
+                        <h2 class="text-xl font-semibold text-gray-800">${result.claim}</h2>
+                        <span class="verdict-badge ${verdictClass}">${result.verdict}</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">${result.explanation}</p>
+                    <div class="mt-4">
+                        <h3 class="font-semibold mb-2 text-gray-800">Evidence:</h3>
+                        <ul class="space-y-2">
+                            ${result.evidence.map(ev => `
+                                <li class="text-sm p-2 rounded ${ev.label === 'entailment' ? 'bg-green-50' : 
+                                                               ev.label === 'contradiction' ? 'bg-red-50' : 
+                                                               'bg-gray-50'}">
+                                    <span class="font-medium">${ev.label}</span> 
+                                    <span class="text-gray-500">(${ev.score.toFixed(2)})</span>: 
+                                    ${ev.text}
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                `;
+                
+                resultsContainer.appendChild(card);
+            });
+        }
+
+        document.getElementById('check').addEventListener('click', async () => {
+            const text = document.getElementById('text').value.trim();
+            if (!text) return;
+
+            const loading = document.querySelector('.loading');
+            const results = document.getElementById('results');
+            const button = document.getElementById('check');
+            
+            loading.classList.remove('hidden');
+            button.disabled = true;
+            button.classList.add('opacity-50');
+            results.innerHTML = '';
+
+            try {
+                const response = await fetch('/check', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ text }),
+                });
+
+                const data = await response.json();
+                
+                if (data.error) {
+                    results.innerHTML = `
+                        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                            <span class="block sm:inline">${data.error}</span>
+                        </div>`;
+                    return;
+                }
+
+                displayResults(data.results);
+                
+                // Reload history after new check
+                loadHistory();
+            } catch (error) {
+                results.innerHTML = `
+                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                        <span class="block sm:inline">Error: ${error.message}</span>
+                    </div>`;
+            } finally {
+                loading.classList.add('hidden');
+                button.disabled = false;
+                button.classList.remove('opacity-50');
+            }
+        });
+
+        // Load history when page loads
+        loadHistory();
+    </script>
+</body>
+</html> 

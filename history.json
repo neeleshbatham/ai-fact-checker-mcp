@@ -1,0 +1,302 @@
+{
+  "history": [
+    {
+      "id": "e1407f6f-a8f3-491a-87a7-17bf87ca2900",
+      "text": "New Dehi is capital of india",
+      "results": [
+        {
+          "claim": "new dehi is capital of india",
+          "verdict": "FALSE",
+          "explanation": "Claim: New Delhi is the capital of India. Evidence: Indira Gandhi International Airport is the primary international airport serving New Delhi. Gold deposits in Kanker district have been identified.",
+          "evidence": [
+            {
+              "text": "Wikipedia - Indira Gandhi International Airport: (IATA: DEL, ICAO: VIDP) is the primary international airport serving New Delhi, the capital of India, and the National Capital Region (NCR). The airport",
+              "label": "neutral",
+              "score": 1.0002307176589966
+            },
+            {
+              "text": "Wikipedia - Music of India: Wade, Bonnie C. (1987). Music in India: the Classical Traditions. New Dehi, India: Manohar, 1987, t.p.\u00a01994. xix, [1], 252 p., amply ill., including",
+              "label": "contradiction",
+              "score": 1.1479591369628905
+            },
+            {
+              "text": "Wikipedia - List of districts of Nepal: Rukum Pyuthan Gulmi Argha khanchi Kapil vastu Palpa Rupan dehi NP West Karnali Province India (Uttar Pradesh) Gandaki Province Sudur Province Humla Mugu",
+              "label": "contradiction",
+              "score": 1.1728847980499266
+            },
+            {
+              "text": "Wikipedia - Kanker district: have been identified. Some deposits of gold have been found in Sona Dehi, Michgaon and in certain other regions of Bhanupratappur Tehsil. At present some",
+              "label": "neutral",
+              "score": 1.1891329765319825
+            },
+            {
+              "text": "Wikipedia - Transport in Kannur district: is connected to several major Indian cities via daily direct trains. Some of the cities connected, with details of trains, are given below: New Dehi by:",
+              "label": "neutral",
+              "score": 1.1886621952056884
+            }
+          ]
+        }
+      ],
+      "timestamp": "2025-06-14T02:43:12.104858"
+    },
+    {
+      "id": "3a3f8b63-b18f-4bc3-bff2-e872b4f82d90",
+      "text": "France is in the US",
+      "results": [
+        {
+          "claim": "france is in the us",
+          "verdict": "NEUTRAL",
+          "explanation": "Claim: France is in the United States. Evidence: The Kingdom of France was the first country to have diplomatic ties with the new United States in 1778.",
+          "evidence": [
+            {
+              "text": "Wikipedia - France\u2013United States relations: The Kingdom of France was the first country to have diplomatic ties with the new United States in 1778. The 1778 Treaty of Alliance between the two countries",
+              "label": "neutral",
+              "score": 1.1719810724258422
+            },
+            {
+              "text": "Wikipedia - List of ambassadors of the United States to France: The United States ambassador to France is the official representative of the president of the United States to the president of France. The United States",
+              "label": "neutral",
+              "score": 0.6481920719146729
+            },
+            {
+              "text": "Wikipedia - This Is Us: This Is Us is an American drama television series created by Dan Fogelman that aired on NBC from September 20, 2016, to May 24, 2022. The series follows",
+              "label": "neutral",
+              "score": 1.1816273689270018
+            },
+            {
+              "text": "Wikipedia - Anti-French sentiment in the United States: Party in particular was hostile to secularism in France. After the French Revolution, the U.S. government refused to pay debts owed to France, arguing",
+              "label": "neutral",
+              "score": 1.1913171529769897
+            },
+            {
+              "text": "Wikipedia - France: France, officially the French Republic, is a country located primarily in Western Europe. Its overseas regions and territories include French Guiana in",
+              "label": "neutral",
+              "score": 1.1721669673919677
+            }
+          ]
+        }
+      ],
+      "timestamp": "2025-06-14T02:45:38.931040"
+    },
+    {
+      "id": "23877fb8-a34d-4d85-a8e8-294a9bf39fa3",
+      "text": "France is in the US",
+      "results": [
+        {
+          "claim": "france is in the us",
+          "verdict": "NEUTRAL",
+          "explanation": "Claim: France is in the us. Evidence: The Kingdom of France was the first country to have diplomatic ties with the new United States in 1778.",
+          "evidence": [
+            {
+              "text": "Wikipedia - France\u2013United States relations: The Kingdom of France was the first country to have diplomatic ties with the new United States in 1778. The 1778 Treaty of Alliance between the two countries",
+              "label": "neutral",
+              "score": 1.1719810724258422
+            },
+            {
+              "text": "Wikipedia - Anti-French sentiment in the United States: Party in particular was hostile to secularism in France. After the French Revolution, the U.S. government refused to pay debts owed to France, arguing",
+              "label": "neutral",
+              "score": 1.1913171529769897
+            },
+            {
+              "text": "Wikipedia - This Is Us: This Is Us is an American drama television series created by Dan Fogelman that aired on NBC from September 20, 2016, to May 24, 2022. The series follows",
+              "label": "neutral",
+              "score": 1.1816273689270018
+            },
+            {
+              "text": "Wikipedia - List of ambassadors of the United States to France: The United States ambassador to France is the official representative of the president of the United States to the president of France. The United States",
+              "label": "neutral",
+              "score": 0.6481920719146729
+            },
+            {
+              "text": "Wikipedia - France: France, officially the French Republic, is a country located primarily in Western Europe. Its overseas regions and territories include French Guiana in",
+              "label": "neutral",
+              "score": 1.1721669673919677
+            },
+            {
+              "text": "Twitter - @curiocat13 (Camilla van Gerbig \ud83d\ude37 3.5% \ud83d\ude37 #FBPE\ud83c\uddfa\ud83c\udde6) - 2025-06-14T07:03:52.000Z: RT @anders_aslund: Israel's bombing of Iran is an expected failure of Trump's dismal diplomacy.\n1. Trump abandoned the Iran nuclear deal (J\u2026",
+              "label": "contradiction",
+              "score": 0.6663741111755371
+            },
+            {
+              "text": "Twitter - @ArgusC (Argus Collingwood \ud83d\uddfd#KHive \ud83d\udc99\ud83d\udc9b\ud83c\udf3b\ud83c\uddfa\ud83c\udde6) - 2025-06-14T07:02:44.000Z: RT @anders_aslund: Israel's bombing of Iran is an expected failure of Trump's dismal diplomacy.\n1. Trump abandoned the Iran nuclear deal (J\u2026",
+              "label": "contradiction",
+              "score": 0.5928959369659424
+            },
+            {
+              "text": "Twitter - @VivienT75526887 (Vivien Taylor) - 2025-06-14T07:02:02.000Z: RT @brexitblog_info: Remember - no one is forced to get on a small boat to cross the Channel. \n\nFrance is a safe country. \n\nThe illegals ar\u2026",
+              "label": "contradiction",
+              "score": 0.5104957103729248
+            },
+            {
+              "text": "Twitter - @cpeedell (Clive Peedell) - 2025-06-14T07:00:03.000Z: RT @anders_aslund: Israel's bombing of Iran is an expected failure of Trump's dismal diplomacy.\n1. Trump abandoned the Iran nuclear deal (J\u2026",
+              "label": "contradiction",
+              "score": 0.610400915145874
+            },
+            {
+              "text": "Twitter - @bwarden (Brett Warden) - 2025-06-14T06:58:07.000Z: RT @anders_aslund: Israel's bombing of Iran is an expected failure of Trump's dismal diplomacy.\n1. Trump abandoned the Iran nuclear deal (J\u2026",
+              "label": "contradiction",
+              "score": 0.607168436050415
+            }
+          ]
+        }
+      ],
+      "timestamp": "2025-06-14T12:36:57.413167"
+    },
+    {
+      "id": "51fab92c-4c1d-4ae9-99df-6b75ffef7c19",
+      "text": "France is in the US",
+      "results": [
+        {
+          "claim": "france is in the us",
+          "verdict": "FALSE",
+          "explanation": "Claim: France is in the United States. Evidence: The Kingdom of France was the first country to have diplomatic ties with the new United States in 1778. The 1778 Treaty of Alliance between the two countries.",
+          "evidence": [
+            {
+              "text": "Wikipedia - France\u2013United States relations: The Kingdom of France was the first country to have diplomatic ties with the new United States in 1778. The 1778 Treaty of Alliance between the two countries",
+              "label": "neutral",
+              "score": 1.2696461617946626
+            },
+            {
+              "text": "Wikipedia - Anti-French sentiment in the United States: Party in particular was hostile to secularism in France. After the French Revolution, the U.S. government refused to pay debts owed to France, arguing",
+              "label": "neutral",
+              "score": 1.290593582391739
+            },
+            {
+              "text": "Wikipedia - This Is Us: This Is Us is an American drama television series created by Dan Fogelman that aired on NBC from September 20, 2016, to May 24, 2022. The series follows",
+              "label": "neutral",
+              "score": 1.2800963163375856
+            },
+            {
+              "text": "Wikipedia - List of ambassadors of the United States to France: The United States ambassador to France is the official representative of the president of the United States to the president of France. The United States",
+              "label": "neutral",
+              "score": 0.7022080779075622
+            },
+            {
+              "text": "Wikipedia - France: France, officially the French Republic, is a country located primarily in Western Europe. Its overseas regions and territories include French Guiana in",
+              "label": "neutral",
+              "score": 1.2698475480079652
+            }
+          ]
+        }
+      ],
+      "timestamp": "2025-06-14T12:40:33.787173"
+    },
+    {
+      "id": "657941bf-bf61-42ab-b829-f2b3504a5736",
+      "text": "New Dehi is capital of india",
+      "results": [
+        {
+          "claim": "new dehi is capital of india",
+          "verdict": "FALSE",
+          "explanation": "Claim: New Delhi is the capital of India. Evidence: Indira Gandhi International Airport is the primary international airport serving New Delhi. Gold deposits in Kanker district have been identified.",
+          "evidence": [
+            {
+              "text": "Wikipedia - Indira Gandhi International Airport: (IATA: DEL, ICAO: VIDP) is the primary international airport serving New Delhi, the capital of India, and the National Capital Region (NCR). The airport",
+              "label": "neutral",
+              "score": 1.083583277463913
+            },
+            {
+              "text": "Wikipedia - Music of India: Wade, Bonnie C. (1987). Music in India: the Classical Traditions. New Dehi, India: Manohar, 1987, t.p.\u00a01994. xix, [1], 252 p., amply ill., including",
+              "label": "contradiction",
+              "score": 1.243622398376465
+            },
+            {
+              "text": "Wikipedia - List of districts of Nepal: Rukum Pyuthan Gulmi Argha khanchi Kapil vastu Palpa Rupan dehi NP West Karnali Province India (Uttar Pradesh) Gandaki Province Sudur Province Humla Mugu",
+              "label": "contradiction",
+              "score": 1.2706251978874208
+            },
+            {
+              "text": "Wikipedia - Kanker district: have been identified. Some deposits of gold have been found in Sona Dehi, Michgaon and in certain other regions of Bhanupratappur Tehsil. At present some",
+              "label": "neutral",
+              "score": 1.288227391242981
+            },
+            {
+              "text": "Wikipedia - Transport in Kannur district: is connected to several major Indian cities via daily direct trains. Some of the cities connected, with details of trains, are given below: New Dehi by:",
+              "label": "neutral",
+              "score": 1.287717378139496
+            }
+          ]
+        }
+      ],
+      "timestamp": "2025-06-14T12:41:20.584080"
+    },
+    {
+      "id": "ed067693-726c-4321-b7fa-3fd06e2a66ae",
+      "text": "New Delhi is capital of india",
+      "results": [
+        {
+          "claim": "new delhi is capital of india",
+          "verdict": "FALSE",
+          "explanation": "Claim: New Delhi is the capital of India and a part of the National Capital Territory of Delhi. Results: neutral (Confidence: 0.76), 1.28, 1.29, 1,19.",
+          "evidence": [
+            {
+              "text": "Wikipedia - Delhi: Delhi, officially the National Capital Territory (NCT) of Delhi, is a city and a union territory of India containing New Delhi, the capital of India. Straddling",
+              "label": "neutral",
+              "score": 0.7594925761222839
+            },
+            {
+              "text": "Wikipedia - New Delhi: New Delhi (/\u02c8nju\u02d0 \u02c8d\u025b.li/ ; Hindi: Na\u012b Dill\u012b, pronounced [\u02c8n\u0259i\u02d0 \u02c8d\u026al\u02d0i\u02d0]) is the capital of India and a part of the National Capital Territory of Delhi",
+              "label": "neutral",
+              "score": 1.2710475742816925
+            },
+            {
+              "text": "Wikipedia - National Capital Region (India): National Capital Region (NCR; R\u0101\u1e63\u1e6dr\u012bya R\u0101jadh\u0101n\u012b K\u1e63\u0113tra) is a planning region centred upon the National Capital Territory (NCT) of Delhi in India. It encompasses",
+              "label": "neutral",
+              "score": 1.2798657178878785
+            },
+            {
+              "text": "Wikipedia - New Delhi district: New Delhi district is an administrative district of Delhi in India. Its district headquarters is New Delhi. It is named after New Delhi, the capital of",
+              "label": "neutral",
+              "score": 1.2869061768054963
+            },
+            {
+              "text": "Wikipedia - Chief Minister of Delhi: Delhi. According to the Constitution of India, the lieutenant governor is the National Capital Territory of Delhi&#039;s de jure head, but de facto executive",
+              "label": "contradiction",
+              "score": 1.1925253927707673
+            }
+          ]
+        }
+      ],
+      "timestamp": "2025-06-14T12:42:19.868178"
+    },
+    {
+      "id": "6737b72f-62bd-494d-b4fb-393014b4fc79",
+      "text": "Github was founded in 2025",
+      "results": [
+        {
+          "claim": "Github was founded in 2025",
+          "verdict": "FALSE",
+          "explanation": "Claim: Github was founded in 2025. Evidence: Wikipedia - Captain Blood (2025 video game): 2025. GitHub - storm-devs/captain-blood, Storm Devs, 1 July 2024, archived from the original on 30 November 2022, retrieved 17 July 2024 \u2013 via GitHub.",
+          "evidence": [
+            {
+              "text": "Wikipedia - Captain Blood (2025 video game): 2025. GitHub - storm-devs/captain-blood, Storm Devs, 1 July 2024, archived from the original on 30 November 2022, retrieved 17 July 2024 \u2013 via GitHub",
+              "label": "contradiction",
+              "score": 1.1793894171714783
+            },
+            {
+              "text": "Wikipedia - Visual Studio Code: Visual Studio Code is based, was released under the open-source MIT License and made available on GitHub. Extension support was also announced. On April 14",
+              "label": "neutral",
+              "score": 1.2911301732063294
+            },
+            {
+              "text": "Wikipedia - UBlock Origin: GitHub. Retrieved December 4, 2019. &quot;Changelog for the first versions&quot;. GitHub. Retrieved December 4, 2019. &quot;Release 1.64.0&quot;. Retrieved May 14, 2025.",
+              "label": "contradiction",
+              "score": 1.264896810054779
+            },
+            {
+              "text": "Wikipedia - Telegram (software): 14 December 2014. Rottermanner et al. 2015, p.\u00a06 &quot;Github issue 871: missing secret chats&quot;. GitHub. 2 July 2015. Archived from the original on 2 May 2019",
+              "label": "contradiction",
+              "score": 1.1910112380981446
+            },
+            {
+              "text": "Wikipedia - Ungoogled-chromium: Starting in 2019, Eloston greatly reduced his involvement in the project, and other developers have continued to maintain the patches. In 2022, the GitHub repository",
+              "label": "contradiction",
+              "score": 0.7292487680912018
+            }
+          ]
+        }
+      ],
+      "timestamp": "2025-06-15T00:13:47.776881"
+    }
+  ]
+}
