@@ -23,7 +23,7 @@ def create_server() -> FastMCP:
     load_dotenv()
     
     # Get Twitter API bearer token from environment
-    X_BEARER_TOKEN = "AAAAAAAAAAAAAAAAAAAAAD1D2QEAAAAA19eeBD1%2Bvk3%2FMOqh7H1pxRMTOww%3DLt5zwNMWYLGN0Hz69Wi7XHXtfnplWdGLbpzAG42gr0L4aEXrp9"
+    X_BEARER_TOKEN = "<YOUR_BEARER_TOKEN>"
     bearer_token = X_BEARER_TOKEN
     if not bearer_token:
         logger.warning("No Twitter API bearer token found in environment variables")
